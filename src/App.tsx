@@ -1,5 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Header from "./components/header/Header";
 import SideBar from "./components/side-bar/SideBar";
@@ -12,7 +10,7 @@ function App() {
       <Header />
       <div className="body-container d-flex">
         <SideBar />
-        <div className="d-flex flex-wrap task-container gap-4 justify-content-around">
+        <div className="d-flex flex-wrap gap-4 justify-content-around">
           <Task />
           <Task />
           <Task />
