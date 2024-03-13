@@ -1,0 +1,23 @@
+.side-bar-container {
+    border: 1px solid black;
+    width: 200px;
+}
+
+.circle {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+#cir-1 {
+    background-color: blueviolet;
+}
+#cir-2 {
+    background-color: rgb(45, 10, 245);
+}
+#cir-3 {
+    background-color: rgb(231, 83, 14);
+}
+#cir-4 {
+    background-color: rgb(22, 230, 14);
+}

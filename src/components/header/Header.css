@@ -1,0 +1,9 @@
+.btn-add-new {
+    font-size: 2rem;
+    padding: 2px;
+}
+
+.btn-add-new:hover {
+    cursor: pointer;
+    color: green;
+}
