@@ -1,4 +1,4 @@
-import React from 'react'
+import './Login.css';
 
 function Login() {
   return (
@@ -8,14 +8,14 @@ function Login() {
         <h6 className="mb-4">Enter your credentials to Login</h6>
 
         <div className="form-outline mb-4">
-          <input type="email" id="email" className="form-control" />
+          <input type="email" id="email" className="form-control text-center" placeholder='Enter your email here...'/>
           <label className="form-label" htmlFor="email">
             Email Address
           </label>
         </div>
 
         <div className="form-outline mb-4">
-          <input type="password" id="password" className="form-control" />
+          <input type="password" id="password" className="form-control text-center" placeholder='Enter password here...'/>
           <label className="form-label" htmlFor="password">
             Password
           </label>
