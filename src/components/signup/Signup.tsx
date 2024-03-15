@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import "./Signup.css";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -18,8 +19,6 @@ function Signup() {
     } catch (error) {
       console.error(error);
     }
-    console.log("Clicked");
-    
   };
 
   return (
@@ -66,9 +65,14 @@ function Signup() {
             </label>
           </div>
 
-          <button type="button" className="btn btn-primary btn-block mb-4" onClick={handleSubmit}>
+          <button
+            type="button"
+            className="btn btn-primary btn-block mb-4"
+            onClick={handleSubmit}
+          >
             Register
           </button>
+          <p>Already registered? <Link to="/login">Login</Link></p>
         </div>
       </form>
     </>
