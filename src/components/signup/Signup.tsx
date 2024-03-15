@@ -18,25 +18,28 @@ function Signup() {
         email: email,
         password: password,
       });
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "You have been registered successfully",
-        showConfirmButton: false,
-        timer: 2500
-      });
 
-      navigate('/login');
-      console.log(response.data);
+      if(response.status === 200) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "You have been registered successfully",
+          showConfirmButton: false,
+          timer: 2500
+        });
+        navigate('/login');
+      } else {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Error!",
+          text: "Enter valid email or password must contain minimum 4 charactors",
+          showConfirmButton: false,
+          timer: 2000
+        });
+      } 
     } catch (error) {
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "Error!",
-        text: "Enter valid email or password must contain minimum 4 charactors",
-        showConfirmButton: false,
-        timer: 2000
-      });
+      alert(error);
     }
   };
 
