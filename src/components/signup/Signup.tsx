@@ -1,12 +1,15 @@
 import { FormEvent, useState } from "react";
 import "./Signup.css";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
@@ -15,9 +18,25 @@ function Signup() {
         email: email,
         password: password,
       });
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "You have been registered successfully",
+        showConfirmButton: false,
+        timer: 2500
+      });
+
+      navigate('/login');
       console.log(response.data);
     } catch (error) {
-      console.error(error);
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Error!",
+        text: "Enter valid email or password must contain minimum 4 charactors",
+        showConfirmButton: false,
+        timer: 2000
+      });
     }
   };
 
