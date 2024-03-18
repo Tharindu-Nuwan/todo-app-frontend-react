@@ -23,6 +23,10 @@ const routes: RouteObject[] = [
 
 const homeRoutes: RouteObject[] = [
     {
+        path:'',
+        Component: Login
+    },
+    {
         path: 'login',
         Component: Login
     },
