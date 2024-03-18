@@ -50,19 +50,19 @@ function AddTask() {
             </div>
             <div className="tags-container d-flex mt-4 justify-content-between">
               
-              <div className="d-flex align-items-center gap-4 p-2" data-value="1">
+              <div className="tag d-flex align-items-center gap-4 p-2" data-value="1">
                 <div id="cir-1" className="circle"></div>
                 <div>Work</div>
               </div>
-              <div className="d-flex align-items-center gap-4 p-2" data-value="2">
+              <div className="tag d-flex align-items-center gap-4 p-2" data-value="2">
                 <div id="cir-2" className="circle"></div>
                 <div>Study</div>
               </div>
-              <div className="d-flex align-items-center gap-4 p-2" data-value="3">
+              <div className="tag d-flex align-items-center gap-4 p-2" data-value="3">
                 <div id="cir-3" className="circle"></div>
                 <div>Entertainment</div>
               </div>
-              <div className="d-flex align-items-center gap-4 p-2" data-value="4">
+              <div className="tag d-flex align-items-center gap-4 p-2" data-value="4">
                 <div id="cir-4" className="circle"></div>
                 <div>Family</div>
               </div>
