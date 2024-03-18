@@ -18,8 +18,8 @@ function Header() {
       <div className="d-flex justify-content-between align-items-center">
         <h1>Todo App</h1>
           <div>
-            <button type="button" onClick={handleAddClick} className="btn btn-success">+ NEW TASK</button>
-            <button type="button" onClick={handleLogoutClick} className="btn btn-outline-primary">Logout</button>
+            <button type="button" onClick={handleAddClick} className="btn btn-success"><i className="bi bi-file-earmark-plus"></i> NEW TASK</button>
+            <button type="button" onClick={handleLogoutClick} className="btn btn-outline-primary"><i className="bi bi-box-arrow-right"></i> Logout</button>
           </div>
       </div>
     </>
