@@ -1,16 +1,14 @@
 import { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-interface LoginProps {
-  onLogin: (token: string) => void;
-}
-
-function Login({ onLogin }: LoginProps) {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -21,8 +19,7 @@ function Login({ onLogin }: LoginProps) {
       if (response.status === 200) {
         const { token } = response.data;
         localStorage.setItem('token', token);
-        onLogin(token);
-
+        navigate('../app/home');
         Swal.fire({
           position: "center",
           icon: "success",
@@ -30,7 +27,7 @@ function Login({ onLogin }: LoginProps) {
           showConfirmButton: false,
           timer: 2500,
         });
-
+      
       } else {
         Swal.fire({
           position: "center",
@@ -40,6 +37,7 @@ function Login({ onLogin }: LoginProps) {
           showConfirmButton: false,
           timer: 2000
         });
+        localStorage.removeItem('token')
       }
     } catch (error) {
       alert(error);

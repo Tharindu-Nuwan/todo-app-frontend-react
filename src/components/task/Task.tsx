@@ -1,18 +1,18 @@
-// import './Task.css'
+import React, { useState } from 'react'
 
-// function Task() {
-//   return (
-//     <div className='task'>Task</div>
-//   )
-// }
+interface TaskProps {
+  title: string,
+  description: string,
+  tags: number[]
+}
 
-// export default Task
+function Task({title, description}: TaskProps) {
 
-import React from 'react'
-
-function Task() {
   return (
-    <div>Task</div>
+    <>
+    <h2>{title}</h2>
+    <h4>{description}</h4>
+    </>
   )
 }
 
