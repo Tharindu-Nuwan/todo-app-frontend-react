@@ -6,11 +6,16 @@ import axios from "axios";
 import './Home.css'
 import { Outlet } from "react-router-dom";
 
+interface TagType {
+  id: number,
+  tag_name: string
+}
+
 interface Task {
   id: number;
   title: string;
   description: string;
-  tags: number[];
+  tags: TagType[];
 }
 
 function Home() {
