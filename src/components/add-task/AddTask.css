@@ -46,4 +46,12 @@
   cursor: pointer;
   background-color: aquamarine;
 }
+
+.tag {
+  border-radius: 15px;
+}
+
+.active {
+  background-color: rgba(56, 129, 189, 0.651);
+}
   

@@ -1,15 +1,64 @@
 import React, { FormEvent, useState } from "react";
 import "./AddTask.css";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 function AddTask() {
-  const [title, setTile] = useState("");
+  const [title, setTitle] = useState("");
   const [description, setDecsription] = useState("");
   const [tags, setTags] = useState<number[]>([]);
   const navigate = useNavigate();
 
   const handleCancelClick = () => {
     navigate("../home");
+  };
+
+  const handleTagClick = (value: number) => {
+    if (tags.includes(value)) {
+      setTags(tags.filter((tag) => tag !== value));
+    } else {
+      setTags([...tags, value]);
+    }
+  };
+
+  const handleSaveClick = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/save",
+        {
+          title: title,
+          description: description,
+          tags: tags,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        }
+      );
+      if (response.status === 201) {
+        navigate("../home");
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Successfully Saved Task",
+          showConfirmButton: false,
+          timer: 2500,
+        });
+      } else {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Error!",
+          text: "Error",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      }
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
@@ -25,7 +74,11 @@ function AddTask() {
               Back
             </button>
             <h5>Add New Task to your list...</h5>
-            <button type="button" className="btn btn-success">
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={handleSaveClick}
+            >
               Save Task
             </button>
           </div>
@@ -36,6 +89,7 @@ function AddTask() {
                 className="form-control"
                 id="floatingInput"
                 placeholder="Enter your task title here..."
+                onChange={(e) => setTitle(e.target.value)}
               />
               <label htmlFor="floatingInput">Title</label>
             </div>
@@ -45,28 +99,51 @@ function AddTask() {
                 id="txt-area"
                 className="form-control"
                 placeholder="Enter the task description here"
+                onChange={(e) => setDecsription(e.target.value)}
               ></textarea>
               <label>Description</label>
             </div>
             <div className="tags-container d-flex mt-4 justify-content-between">
-              
-              <div className="tag d-flex align-items-center gap-4 p-2" data-value="1">
+              <div
+                className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
+                  tags.includes(1) ? "active" : ""
+                }`}
+                data-value={1}
+                onClick={() => handleTagClick(1)}
+              >
                 <div id="cir-1" className="circle"></div>
                 <div>Work</div>
               </div>
-              <div className="tag d-flex align-items-center gap-4 p-2" data-value="2">
+              <div
+                className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
+                  tags.includes(2) ? "active" : ""
+                }`}
+                data-value={2}
+                onClick={() => handleTagClick(2)}
+              >
                 <div id="cir-2" className="circle"></div>
                 <div>Study</div>
               </div>
-              <div className="tag d-flex align-items-center gap-4 p-2" data-value="3">
+              <div
+                className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
+                  tags.includes(3) ? "active" : ""
+                }`}
+                data-value={3}
+                onClick={() => handleTagClick(3)}
+              >
                 <div id="cir-3" className="circle"></div>
                 <div>Entertainment</div>
               </div>
-              <div className="tag d-flex align-items-center gap-4 p-2" data-value="4">
+              <div
+                className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
+                  tags.includes(4) ? "active" : ""
+                }`}
+                data-value={4}
+                onClick={() => handleTagClick(4)}
+              >
                 <div id="cir-4" className="circle"></div>
                 <div>Family</div>
               </div>
-            
             </div>
           </div>
         </div>

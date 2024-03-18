@@ -4,6 +4,7 @@ import SideBar from "../side-bar/SideBar";
 import Task from "../task/Task";
 import axios from "axios";
 import './Home.css'
+import { Outlet } from "react-router-dom";
 
 interface Task {
   id: number;
@@ -49,7 +50,7 @@ function Home() {
           ))} 
           </div> 
         </div>
-        {/* <Outlet /> */}
+        <Outlet />
       </div>
       
     </>
