@@ -3,14 +3,14 @@
   height: 200px;
   border: 1px solid black;
   border-radius: 20px;
-  background-color: rgb(243, 203, 73);
+  background-color: rgb(224, 196, 102);
   padding: 10px;
   margin: 15px;
 }
 
 .tag-dot {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
 }
 
@@ -34,4 +34,12 @@
   display: flex;
   gap: 5px;
   margin-top: 10px;
+}
+
+.bi:hover {
+    cursor: pointer;
+}
+
+.bi-pencil-square:hover {
+    color: blue;
 }
