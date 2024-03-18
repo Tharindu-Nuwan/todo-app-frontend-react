@@ -46,7 +46,7 @@ function Home() {
           </div>
           <div className="d-flex flex-wrap gap-4 justify-content-around task-container">
           {taskList.map((task)=>(
-            <Task key={task.id} title={task.title} description={task.description} tags={[]}/>
+            <Task key={task.id} title={task.title} description={task.description} tags={task.tags}/>
           ))} 
           </div> 
         </div>

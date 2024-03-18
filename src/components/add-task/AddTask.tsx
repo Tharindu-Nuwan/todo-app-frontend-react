@@ -108,7 +108,6 @@ function AddTask() {
                 className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
                   tags.includes(1) ? "active" : ""
                 }`}
-                data-value={1}
                 onClick={() => handleTagClick(1)}
               >
                 <div id="cir-1" className="circle"></div>
@@ -118,7 +117,6 @@ function AddTask() {
                 className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
                   tags.includes(2) ? "active" : ""
                 }`}
-                data-value={2}
                 onClick={() => handleTagClick(2)}
               >
                 <div id="cir-2" className="circle"></div>
@@ -128,7 +126,6 @@ function AddTask() {
                 className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
                   tags.includes(3) ? "active" : ""
                 }`}
-                data-value={3}
                 onClick={() => handleTagClick(3)}
               >
                 <div id="cir-3" className="circle"></div>
@@ -138,7 +135,6 @@ function AddTask() {
                 className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
                   tags.includes(4) ? "active" : ""
                 }`}
-                data-value={4}
                 onClick={() => handleTagClick(4)}
               >
                 <div id="cir-4" className="circle"></div>
