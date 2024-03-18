@@ -1,10 +1,14 @@
 .btn-add-new {
     font-size: 3.5rem;
-    background-color: none;
     border: none;
 }
 
 .btn-add-new:hover {
     cursor: pointer;
     color: green;
+}
+
+.btn {
+    margin-left: 5px;
+    margin-right: 5px;
 }

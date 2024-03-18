@@ -1,5 +1,10 @@
 .task {
     width: 500px;
+    height: 200px;
     border: 1px solid black;
     border-radius: 20px;
+    background-color: rgb(243, 203, 73);
+    padding: 10px;
+    margin: 15px;
 }
+

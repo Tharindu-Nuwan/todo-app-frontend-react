@@ -47,10 +47,10 @@ function Login() {
   return (
     <>
       <form className="d-flex flex-column vw-100 vh-100 justify-content-center align-items-center">
-        <div className="rounded p-5 shadow-lg mb-5 bg-body-tertiary">
+        <div className="rounded p-5 shadow-lg mb-5 bg-body-tertiary d-flex flex-column justify-content-center align-items-center">
           <h6 className="mb-4">Enter your credentials to Login</h6>
 
-          <div className="form-outline mb-4">
+          <div className="form-outline mb-4 d-flex flex-column justify-content-center align-items-center">
             <input
               type="email"
               id="email"
@@ -63,7 +63,7 @@ function Login() {
             </label>
           </div>
 
-          <div className="form-outline mb-4">
+          <div className="form-outline mb-4 d-flex flex-column justify-content-center align-items-center">
             <input
               type="password"
               id="password"

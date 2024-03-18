@@ -1,0 +1,29 @@
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3a3838;
+  color: #fff;
+  text-align: center;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 200px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.task-container {
+  position: absolute;
+  width: calc(100vw - 200px);
+  left: 200px;
+  overflow-x: hidden;
+  margin-top: 100px;
+  z-index: 1;
+}

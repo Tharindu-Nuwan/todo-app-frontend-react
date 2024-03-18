@@ -1,28 +1,35 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 import "./AddTask.css";
-import { Link } from "react-router-dom";
-
-// interface ModalProps {
-//   onClose: () => void;
-//   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
-// }
+import { Link, useNavigate } from "react-router-dom";
 
 function AddTask() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle form submission logic here
-   /*  onSubmit(e); */
+  const [title, setTile] = useState("");
+  const [description, setDecsription] = useState("");
+  const [tags, setTags] = useState<number[]>([]);
+  const navigate = useNavigate();
+
+  const handleCancelClick = () => {
+    navigate("../home");
   };
 
   return (
     <>
-      <div>
+      <div className="modal">
         <div className="modal-content">
-            <div>
-            <button type="button" className="btn btn-outline-light"><Link to={'../home'}>Cancel</Link></button>
-            <button type="button" className="btn btn-success">Success</button>
-            </div>
-          <form onSubmit={handleSubmit}>
+          <div className="mb-4 d-flex align-items-center justify-content-around">
+            <button
+              type="button"
+              className="btn btn-outline-info"
+              onClick={handleCancelClick}
+            >
+              Back
+            </button>
+            <h5>Add New Task to your list...</h5>
+            <button type="button" className="btn btn-success">
+              Save Task
+            </button>
+          </div>
+          <div>
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -41,9 +48,27 @@ function AddTask() {
               ></textarea>
               <label>Description</label>
             </div>
-
-            <button type="submit">Submit</button>
-          </form>
+            <div className="tags-container d-flex mt-4 justify-content-between">
+              
+              <div className="d-flex align-items-center gap-4 p-2" data-value="1">
+                <div id="cir-1" className="circle"></div>
+                <div>Work</div>
+              </div>
+              <div className="d-flex align-items-center gap-4 p-2" data-value="2">
+                <div id="cir-2" className="circle"></div>
+                <div>Study</div>
+              </div>
+              <div className="d-flex align-items-center gap-4 p-2" data-value="3">
+                <div id="cir-3" className="circle"></div>
+                <div>Entertainment</div>
+              </div>
+              <div className="d-flex align-items-center gap-4 p-2" data-value="4">
+                <div id="cir-4" className="circle"></div>
+                <div>Family</div>
+              </div>
+            
+            </div>
+          </div>
         </div>
       </div>
     </>

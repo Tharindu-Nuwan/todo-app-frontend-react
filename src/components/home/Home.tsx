@@ -2,19 +2,28 @@ import React, { useEffect, useState } from "react";
 import Header from "../header/Header";
 import SideBar from "../side-bar/SideBar";
 import Task from "../task/Task";
-import { Outlet } from "react-router-dom";
-import AddTask from "../add-task/AddTask";
 import axios from "axios";
+import './Home.css'
+
+interface Task {
+  id: number;
+  title: string;
+  description: string;
+  tags: number[];
+}
 
 function Home() {
-  const [token, setToken] = useState('');
-  const [taskList, setTaskList] = useState([]);
-  setToken(localStorage.getItem('token')!);
+  const [taskList, setTaskList] = useState<Task[]>([]);
+  
 
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await axios.get('/items');
+        const response = await axios.get('http://localhost:8000/api/get', {
+          headers : {
+            Authorization : `Bearer ${localStorage.getItem('token')}`
+          }
+        });
         setTaskList(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -27,14 +36,20 @@ function Home() {
   return (
     <>
       <div className="main-view">
-        <Header />
-        <div className="body-container d-flex">
-          <SideBar />
-          <div className="d-flex flex-wrap gap-4 justify-content-around"></div>
-          
-          <Task />
+        <div className="header-container">
+          <Header />
         </div>
-        <Outlet />
+        <div className="body-container d-flex">
+          <div className="sidebar-container">
+          <SideBar />
+          </div>
+          <div className="d-flex flex-wrap gap-4 justify-content-around task-container">
+          {taskList.map((task)=>(
+            <Task key={task.id} title={task.title} description={task.description} tags={[]}/>
+          ))} 
+          </div> 
+        </div>
+        {/* <Outlet /> */}
       </div>
       
     </>

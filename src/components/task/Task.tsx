@@ -1,19 +1,20 @@
-import React, { useState } from 'react'
+import "./Task.css";
 
 interface TaskProps {
-  title: string,
-  description: string,
-  tags: number[]
+  title: string;
+  description: string;
+  tags: number[];
 }
 
-function Task({title, description}: TaskProps) {
-
+function Task({ title, description }: TaskProps) {
   return (
     <>
-    <h2>{title}</h2>
-    <h4>{description}</h4>
+      <div className="task d-flex flex-column align-items-center">
+        <h4>{title}</h4>
+        <h6>{description}</h6>
+      </div>
     </>
-  )
+  );
 }
 
-export default Task
+export default Task;
