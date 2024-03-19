@@ -85,7 +85,7 @@ function UpdateTask() {
             >
               Back
             </button>
-            <h5>Update the existing task...</h5>
+            <h4>Update the existing task...</h4>
           </div>
           <div>
             <div className="form-floating mb-3">

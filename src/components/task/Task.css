@@ -1,17 +1,18 @@
 .task {
-  width: 500px;
-  height: 200px;
+  width: 330px;
+  height: auto;
+  min-height: 90px;
   border: none;
   box-shadow: 2px 2px 10px gray;
   border-radius: 20px;
-  background-color: rgba(236, 245, 109, 0.89);
+  background-color: rgba(236, 245, 109, 0.815);
   padding: 10px;
-  margin: 15px;
+  margin: 5px;
 }
 
 .tag-dot {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
 }
 
@@ -42,9 +43,31 @@
 }
 
 .bi-pencil-square:hover {
-    color: blue;
+    color: rgb(3, 3, 126);
 }
 
 .bi-trash3:hover {
-    color: red;
+    color: rgb(116, 3, 3);
+}
+
+h5 {
+  color: rgb(85, 85, 10);  
+}
+
+p {
+  color: rgb(85, 85, 10);  
+}
+
+@media screen and (min-width: 481px) and (max-width: 720px) {
+  .task {
+    width: 450px;
+    height: auto;
+    min-height: 90px;
+    border: none;
+    box-shadow: 2px 2px 10px gray;
+    border-radius: 20px;
+    background-color: rgba(236, 245, 109, 0.815);
+    padding: 10px;
+    margin: 5px;
+  }
 }

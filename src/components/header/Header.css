@@ -7,46 +7,80 @@
 
 .button-container .logout {
     position: absolute;
-    background-color: rgb(223, 173, 11);
+    padding-left: 10px;
+    padding-right:10px;
     right: 10px;
-    top: -5px;
   }
 
   .button-container .logout:hover {
-    background-color: rgb(182, 146, 27);
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(252, 186, 3);
+    box-shadow: 0px 2px 5px grey;
   }
 
   .button-container .add {
     position: absolute;
-    background-color: rgb(223, 173, 11);
+    background-color: rgb(252, 186, 3);
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right:10px;
     right: 100px;
-    top: -5px;
   }
 
   .button-container .add:hover {
-    background-color: rgb(182, 146, 27);
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(221, 165, 10);
+    box-shadow: 0px 2px 5px grey;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    background-image: url("/src/assets/images/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .logo-text {
+    position: relative;
+    top: 5px;
+    width: 100px;
+    height: 40px;
+    background-image: url("/src/assets/images/logo-text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .logo-container {
+    position: absolute;
   }
 
 @media screen and (min-width: 481px) and (max-width: 720px) {
   .button-container {
-    position: relative;
-    left: 0;
-    width: 500px;
+    position: absolute;
+    right: 5px;
+    width: 100px;
   }
 
   .button-container i {
     display: none;
   }
 
-  .button-container .logout {
-    position: absolute;
-    right: 0;
-    top: -35px;
-  }
-
   .button-container .add {
     position: absolute;
-    right: 100px;
-    top: -35px;
+    right: 70px;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text {
+    width: 80px;
+    height: 30px;
   }
 }

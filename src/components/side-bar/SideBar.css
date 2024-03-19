@@ -12,6 +12,7 @@
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  box-shadow: 2px 2px 15px rgba(145, 156, 158, 0.644);
 }
 
 #cir-1 {

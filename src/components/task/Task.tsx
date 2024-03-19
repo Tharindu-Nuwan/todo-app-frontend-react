@@ -31,7 +31,11 @@ function Task({ id, title, description, tags }: TaskProps) {
     });
   };
 
-  const handleUpdateClick = (id: number, title: string, description:string) => {
+  const handleUpdateClick = (
+    id: number,
+    title: string,
+    description: string
+  ) => {
     navigate(`../update/${id}/${title}/${description}`);
   };
 
@@ -91,23 +95,26 @@ function Task({ id, title, description, tags }: TaskProps) {
       <div className="task d-flex flex-column justify-content-between">
         <div className="d-flex justify-content-between">
           <div>
-            <h3>{title}</h3>
+            <h5>{title}</h5>
             <p>{description}</p>
           </div>
 
-          <div className="tag-dots-container d-flex flex-column">
+          
+        </div>
+        <div className="d-flex justify-content-between align-items-center">
+        <div className="tag-dots-container">
             {renderColorDots()}
           </div>
-        </div>
-        <div className="d-flex flex-row-reverse gap-3">
-          <i
-            className="bi bi-pencil-square fs-4"
-            onClick={() => handleUpdateClick(id, title, description)}
-          ></i>
-          <i
-            className="bi bi-trash3 fs-4"
-            onClick={() => handleDeleteClick(id)}
-          ></i>
+          <div className="d-flex gap-2">
+            <i
+              className="bi bi-pencil-square fs-6 fw-semibold"
+              onClick={() => handleUpdateClick(id, title, description)}
+            ></i>
+            <i
+              className="bi bi-trash3 fs-6 fw-semibold"
+              onClick={() => handleDeleteClick(id)}
+            ></i>
+          </div>
         </div>
       </div>
     </>

@@ -44,7 +44,7 @@
 
 .tag:hover {
   cursor: pointer;
-  background-color: aquamarine;
+  background-color: rgb(219, 241, 91);
 }
 
 .tag {
@@ -52,6 +52,6 @@
 }
 
 .active {
-  background-color: rgba(56, 129, 189, 0.651);
+  background-color: rgba(188, 190, 13, 0.651);
 }
   

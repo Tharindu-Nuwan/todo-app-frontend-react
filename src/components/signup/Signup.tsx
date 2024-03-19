@@ -73,7 +73,7 @@ function Signup() {
 
             <div className="form-outline mb-4">
             <label className="form-label" htmlFor="email">
-                Email Address
+                Email
               </label>
               <input
                 type="email"

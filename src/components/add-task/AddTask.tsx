@@ -61,7 +61,7 @@ function AddTask() {
         position: "center",
         icon: "error",
         title: "Error!",
-        text: "Check your input data.",
+        text: "Check your input data, description too long.",
         showConfirmButton: false,
         timer: 2000,
       });
@@ -80,7 +80,7 @@ function AddTask() {
             >
               Back
             </button>
-            <h5>Add New Task to your list...</h5>
+            <h4>Add New Task to your list...</h4>
             
           </div>
           <div>
@@ -96,12 +96,12 @@ function AddTask() {
             </div>
 
             <div className="form-floating">
-              <textarea
+              <input
                 id="txt-area"
                 className="form-control"
                 placeholder="Enter the task description here"
                 onChange={(e) => setDecsription(e.target.value)}
-              ></textarea>
+              ></input>
               <label>Description</label>
             </div>
             <div className="tags-container d-flex mt-4 justify-content-between">
