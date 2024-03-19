@@ -68,7 +68,7 @@ function AddTask() {
           <div className="mb-4 d-flex align-items-center justify-content-start gap-5">
             <button
               type="button"
-              className="btn btn-outline-info"
+              className="btn btn-outline-warning"
               onClick={handleCancelClick}
             >
               Back
@@ -136,10 +136,10 @@ function AddTask() {
               </div>
             </div>
           </div>
-          <div className="d-flex justify-content-end mt-4">
+          <div className="d-flex justify-content-end">
             <button
               type="button"
-              className="btn btn-success"
+              className="btn btn-warning"
               onClick={handleSaveClick}
             >
               Save Task

@@ -67,7 +67,7 @@ function Task({ id, title, description, tags }: TaskProps) {
             if (response.status === 200) {
               swalWithBootstrapButtons.fire({
                 title: "Deleted!",
-                text: "Your file has been deleted.",
+                text: "Your task has been deleted.",
                 icon: "success",
               });
               navigate("../home");
@@ -79,7 +79,7 @@ function Task({ id, title, description, tags }: TaskProps) {
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
-            text: "Your file did not deleted :)",
+            text: "Your task didn't delete :)",
             icon: "error",
           });
         }
