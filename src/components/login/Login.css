@@ -11,7 +11,7 @@
     background-color: rgba(224, 218, 218, 0.74);
   }
 
-  @media screen and (min-width: 481px) and (max-width: 720px) {
+  @media screen and (min-width: 320px) and (max-width: 720px) {
     .image-container {
       display: none;
     }
