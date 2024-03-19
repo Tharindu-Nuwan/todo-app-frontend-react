@@ -83,7 +83,7 @@ function Task({ id, title, description, tags }: TaskProps) {
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
-            text: "Your task hasn't been deleted :)",
+            text: "Your task didn't delete :)",
             icon: "error",
           });
         }
