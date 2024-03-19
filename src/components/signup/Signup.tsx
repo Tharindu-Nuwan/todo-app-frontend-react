@@ -46,7 +46,7 @@ function Signup() {
   return (
     <>
       <form className="d-flex flex-column vw-100 vh-100 justify-content-center align-items-center">
-        <div className="rounded p-5 shadow-lg mb-5 bg-body-tertiary d-flex justify-content-center align-items-center">
+        <div className="rounded p-5 shadow-lg bg-body-tertiary d-flex justify-content-center align-items-center">
           <div className="image-box"></div>
           <div className="d-flex flex-column justify-content-center">
           <span className="mb-4 fs-2 text-warning">Register</span>
