@@ -1,22 +1,30 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-interface UpdateProps {
-  id: number
-}
 
 function UpdateTask() {
-  const [title, setTitle] = useState("");
-  const [description, setDecsription] = useState("");
+  const {id, title, description} = useParams<{id: string; title?: string; description?: string}>();
+
+  const [titleElm, setTitle] = useState(title || '');
+  const [descriptionElm, setDecsription] = useState(description || '');
   const [tags, setTags] = useState<number[]>([]);
   const navigate = useNavigate();
-  const {id} = useParams<{id: string}>();
 
   const handleCancelClick = () => {
     navigate("../home");
   };
+
+  useEffect(()=>{
+    if (title !== undefined) {
+      setTitle(title);
+    }
+
+    if (description !== undefined) {
+      setDecsription(description);
+    } 
+  },[]);
 
   const handleTagClick = (value: number) => {
     if (tags.includes(value)) {
@@ -26,13 +34,13 @@ function UpdateTask() {
     }
   };
 
-  const handleSaveClick = async () => {
+  const handleUpdateClick = async () => {
     try {
       const response = await axios.patch(
         `http://localhost:8000/api/update/${id}`,
         {
-          title: title,
-          description: description,
+          title: titleElm,
+          description: descriptionElm,
           tags: tags,
         },
         {
@@ -69,7 +77,7 @@ function UpdateTask() {
     <>
       <div className="modal">
         <div className="modal-content">
-          <div className="mb-4 d-flex align-items-center justify-content-around">
+          <div className="mb-4 d-flex align-items-center justify-content-start gap-5">
             <button
               type="button"
               className="btn btn-outline-info"
@@ -78,13 +86,6 @@ function UpdateTask() {
               Back
             </button>
             <h5>Update the existing task...</h5>
-            <button
-              type="button"
-              className="btn btn-success"
-              onClick={handleSaveClick}
-            >
-              Update Task
-            </button>
           </div>
           <div>
             <div className="form-floating mb-3">
@@ -93,18 +94,20 @@ function UpdateTask() {
                 className="form-control"
                 id="floatingInput"
                 placeholder="Enter your task title here..."
+                value={titleElm}
                 onChange={(e) => setTitle(e.target.value)}
               />
               <label htmlFor="floatingInput">Title</label>
             </div>
 
             <div className="form-floating">
-              <textarea
+              <input
                 id="txt-area"
                 className="form-control"
                 placeholder="Enter the task description here"
+                value={descriptionElm}
                 onChange={(e) => setDecsription(e.target.value)}
-              ></textarea>
+              ></input>
               <label>Description</label>
             </div>
             <div className="tags-container d-flex mt-4 justify-content-between">
@@ -144,6 +147,15 @@ function UpdateTask() {
                 <div id="cir-4" className="circle"></div>
                 <div>Family</div>
               </div>
+            </div>
+            <div className="d-flex justify-content-end mt-4">
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={handleUpdateClick}
+            >
+              Update Task
+            </button>
             </div>
           </div>
         </div>

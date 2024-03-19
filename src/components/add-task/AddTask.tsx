@@ -65,7 +65,7 @@ function AddTask() {
     <>
       <div className="modal">
         <div className="modal-content">
-          <div className="mb-4 d-flex align-items-center justify-content-around">
+          <div className="mb-4 d-flex align-items-center justify-content-start gap-5">
             <button
               type="button"
               className="btn btn-outline-info"
@@ -74,13 +74,7 @@ function AddTask() {
               Back
             </button>
             <h5>Add New Task to your list...</h5>
-            <button
-              type="button"
-              className="btn btn-success"
-              onClick={handleSaveClick}
-            >
-              Save Task
-            </button>
+            
           </div>
           <div>
             <div className="form-floating mb-3">
@@ -141,6 +135,15 @@ function AddTask() {
                 <div>Family</div>
               </div>
             </div>
+          </div>
+          <div className="d-flex justify-content-end mt-4">
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={handleSaveClick}
+            >
+              Save Task
+            </button>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const routes: RouteObject[] = [
         Component: AddTask
     },
     {
-        path: 'update/:id',
+        path: 'update/:id/:title/:description',
         Component: UpdateTask
     }
 ];

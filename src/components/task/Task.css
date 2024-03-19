@@ -2,9 +2,9 @@
   width: 500px;
   height: 200px;
   border: none;
-  box-shadow: 10px 10px 5px gray;
+  box-shadow: 3px 3px 20px gray;
   border-radius: 20px;
-  background-color: rgb(224, 196, 102);
+  background-color: rgba(232, 240, 122, 0.89);
   padding: 10px;
   margin: 15px;
 }

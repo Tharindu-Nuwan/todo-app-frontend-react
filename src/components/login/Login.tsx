@@ -47,38 +47,44 @@ function Login() {
   return (
     <>
       <form className="d-flex flex-column vw-100 vh-100 justify-content-center align-items-center">
-        <div className="rounded p-5 shadow-lg mb-5 bg-body-tertiary d-flex flex-column justify-content-center align-items-center">
-          <h6 className="mb-4">Enter your credentials to Login</h6>
+        <div className="rounded p-5 shadow-lg mb-5 bg-body-tertiary d-flex justify-content-center align-items-center">
+        <div className="image-container">
+          </div>
+          <div className="d-flex flex-column justify-content-center">
+          
+          <span className="mb-4 fs-2 text-warning">Login</span>
 
-          <div className="form-outline mb-4 d-flex flex-column justify-content-center align-items-center">
+          <div className="form-outline mb-4">
+          <label className="form-label" htmlFor="email">
+              Email Address
+            </label>
             <input
               type="email"
               id="email"
-              className="form-control text-center"
+              className="form-control"
               placeholder="Enter your email here..."
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label className="form-label" htmlFor="email">
-              Email Address
-            </label>
+            
           </div>
 
-          <div className="form-outline mb-4 d-flex flex-column justify-content-center align-items-center">
+          <div className="form-outline mb-4">
+          <label className="form-label" htmlFor="password">
+              Password
+            </label>
             <input
               type="password"
               id="password"
-              className="form-control text-center"
+              className="form-control"
               placeholder="Enter password here..."
               onChange={(e) => setPassword(e.target.value)}
             />
-            <label className="form-label" htmlFor="password">
-              Password
-            </label>
+            
           </div>
 
           <button
             type="button"
-            className="btn btn-primary btn-block mb-4"
+            className="btn btn-warning btn-block mb-4"
             onClick={handleLogin}
           >
             Login
@@ -86,6 +92,8 @@ function Login() {
           <p>
             If you haven't registered yet? <Link to="/signup">Register</Link>
           </p>
+          </div>
+          
         </div>
       </form>
     </>

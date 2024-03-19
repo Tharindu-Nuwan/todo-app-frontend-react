@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #3a3838;
-  color: #fff;
+  background-color: rgba(232, 240, 122, 0.89);
+  color: black;
   text-align: center;
   z-index: 1000;
   padding: 10px;
@@ -28,9 +28,23 @@
   z-index: 1;
 }
 
-/* {
-  background-image: url('/src/assets/images/bg.jpg');
-  background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-} */
+
+@media screen and (min-width: 481px) and (max-width: 720px) {
+  .sidebar-container {
+    position: fixed;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .task-container {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    overflow-x: hidden;
+    margin-top: 200px;
+    z-index: 1;
+  }
+}

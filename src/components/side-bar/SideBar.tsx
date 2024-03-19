@@ -3,7 +3,7 @@ import "./SideBar.css";
 function SideBar() {
   return (
     <>
-      <div className="side-bar-container ms-2 me-5 flex-column justify-content-between align-items-center">
+      <div className="side-bar-container">
         <div className="tags-container">
           <div className="d-flex align-items-center gap-4 p-2">
             <div id="cir-1" className="circle"></div>
