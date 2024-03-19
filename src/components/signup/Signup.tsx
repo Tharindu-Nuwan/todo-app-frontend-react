@@ -39,7 +39,14 @@ function Signup() {
         });
       }
     } catch (error) {
-      alert(error);
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Error!",
+        text: "Enter valid email or password must contain minimum 4 charactors",
+        showConfirmButton: false,
+        timer: 2000,
+      });
     }
   };
 

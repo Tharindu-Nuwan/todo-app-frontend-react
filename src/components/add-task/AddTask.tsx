@@ -57,7 +57,14 @@ function AddTask() {
         });
       }
     } catch (error) {
-      alert(error);
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Error!",
+        text: "Check your input data.",
+        showConfirmButton: false,
+        timer: 2000,
+      });
     }
   };
 

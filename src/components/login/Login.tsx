@@ -39,7 +39,15 @@ function Login() {
         localStorage.removeItem("token");
       }
     } catch (error) {
-      alert(error);
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Error!",
+        text: "Email and Password doesn't match with registered users!",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      localStorage.removeItem("token");
     }
   };
 
