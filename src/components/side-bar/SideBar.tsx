@@ -22,7 +22,7 @@ function SideBar() {
             <div>Family</div>
           </div>
         </div>
-        <div className="image-container"></div>
+        <div className="image"></div>
       </div>
     </>
   );

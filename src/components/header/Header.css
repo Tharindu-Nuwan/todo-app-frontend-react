@@ -7,14 +7,24 @@
 
 .button-container .logout {
     position: absolute;
+    background-color: rgb(223, 173, 11);
     right: 10px;
     top: -5px;
   }
 
+  .button-container .logout:hover {
+    background-color: rgb(182, 146, 27);
+  }
+
   .button-container .add {
     position: absolute;
-    right: 75px;
+    background-color: rgb(223, 173, 11);
+    right: 100px;
     top: -5px;
+  }
+
+  .button-container .add:hover {
+    background-color: rgb(182, 146, 27);
   }
 
 @media screen and (min-width: 481px) and (max-width: 720px) {

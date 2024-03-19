@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(232, 240, 122, 0.89);
+  background-color: rgba(236, 245, 109, 0.89);
   color: black;
   text-align: center;
   z-index: 1000;
@@ -22,12 +22,17 @@
 .task-container {
   position: absolute;
   width: calc(100vw - 200px);
+  height: 100%;
   left: 200px;
   overflow-x: hidden;
   margin-top: 100px;
   z-index: 1;
+  background-image: url('/src/assets/images/bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
 }
-
 
 @media screen and (min-width: 481px) and (max-width: 720px) {
   .sidebar-container {

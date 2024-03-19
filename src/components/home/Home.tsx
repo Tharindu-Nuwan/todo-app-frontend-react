@@ -3,12 +3,12 @@ import Header from "../header/Header";
 import SideBar from "../side-bar/SideBar";
 import Task from "../task/Task";
 import axios from "axios";
-import './Home.css'
+import "./Home.css";
 import { Outlet } from "react-router-dom";
 
 interface TagType {
-  id: number,
-  tag_name: string
+  id: number;
+  tag_name: string;
 }
 
 interface Task {
@@ -20,24 +20,23 @@ interface Task {
 
 function Home() {
   const [taskList, setTaskList] = useState<Task[]>([]);
-  
 
-  useEffect(()=>{
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/get', {
-          headers : {
-            Authorization : `Bearer ${localStorage.getItem('token')}`
-          }
+        const response = await axios.get("http://localhost:8000/api/get", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         });
         setTaskList(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  },[]);
+  }, []);
 
   return (
     <>
@@ -47,17 +46,24 @@ function Home() {
         </div>
         <div className="body-container d-flex">
           <div className="sidebar-container">
-          <SideBar />
+            <SideBar />
           </div>
           <div className="d-flex flex-wrap gap-4 justify-content-around task-container">
-          {taskList.map((task)=>(
-            <Task key={task.id} id={task.id} title={task.title} description={task.description} tags={task.tags}/>
-          ))} 
-          </div> 
+            {taskList.map((task) => (
+              <Task
+                key={task.id}
+                id={task.id}
+                title={task.title}
+                description={task.description}
+                tags={task.tags}
+              />
+            ))}
+
+            <div className="bg-image"></div>
+          </div>
         </div>
         <Outlet />
       </div>
-      
     </>
   );
 }

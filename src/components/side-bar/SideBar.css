@@ -4,7 +4,7 @@
   margin-left: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -27,10 +27,10 @@
   background-color: green;
 }
 
-.image-container {
+.image {
   width: 200px;
   height: 200px;
-  background-image: url("/src/assets/images/image.jpg");
+  background-image: url("/src/assets/images/image.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -56,7 +56,7 @@
     border-radius: 50%;
   }
 
-  .image-container {
+  .image {
     background-image: none;
   }
 
