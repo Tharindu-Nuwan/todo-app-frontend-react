@@ -150,4 +150,8 @@
   .task {
     width: calc((100vw - 20px)/2);
   }
+  #title {
+    left: 30px;
+    width: calc((100vw - 140px)/2);
+  }
 }
