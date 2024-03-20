@@ -36,8 +36,8 @@
 } */
 
 .tag-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   opacity: 0.75;
 }
@@ -88,7 +88,12 @@
 
 #description {
   font-size: 0.8rem;
-  color: rgb(85, 85, 10);  
+  color: rgb(85, 85, 10);
+  margin-left: 42px;
+}
+
+.chk-box {
+  margin-left: 10px;
 }
 
 .chk-box:hover {
@@ -110,17 +115,25 @@
 
   .tag-dots-container {
     margin-top: 0;
+    margin-right: 5px;
     display: flex;
-    /* flex-direction: row;
-    flex-direction: column; */
+    flex-direction: row;
+    flex-direction: column;
     gap: 2px;
   }
 
   .icons-dots-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: space-between;
     padding: 2px;
+  }
+
+  .icons-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2px;
+    margin-right: 10px;
   }
 
   /* .title-box {

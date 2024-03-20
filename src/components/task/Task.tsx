@@ -141,7 +141,7 @@ function Task({ id, title, description, tags, status }: TaskProps) {
         </div>
         <div className="d-flex justify-content-between align-items-center icons-dots-container">
           <div className="tag-dots-container">{renderColorDots()}</div>
-          <div className="d-flex gap-2">
+          <div className="d-flex gap-2 icons-container">
             <i
               className="bi bi-pencil-square fw-semibold"
               onClick={() => handleUpdateClick(id, title, description)}
