@@ -7,19 +7,19 @@ function SideBar() {
         <div className="tags-container">
           <div className="d-flex align-items-center gap-4 p-2">
             <div id="cir-1" className="circle"></div>
-            <div>Work</div>
+            <div className="txt-tag">Work</div>
           </div>
           <div className="d-flex align-items-center gap-4 p-2">
             <div id="cir-2" className="circle"></div>
-            <div>Study</div>
+            <div className="txt-tag">Study</div>
           </div>
           <div className="d-flex align-items-center gap-4 p-2">
             <div id="cir-3" className="circle"></div>
-            <div>Entertainment</div>
+            <div className="txt-tag">Entertainment</div>
           </div>
           <div className="d-flex align-items-center gap-4 p-2">
             <div id="cir-4" className="circle"></div>
-            <div>Family</div>
+            <div className="txt-tag">Family</div>
           </div>
         </div>
         <div className="image"></div>

@@ -116,9 +116,9 @@ function UpdateTask() {
               ></input>
               <label>Description</label>
             </div>
-            <div className="tags-container-update">
+            <div className="dots-container-update">
               <div
-                className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
+                className={`tag d-flex align-items-center gap-4 p-1 m-1 px-2 ${
                   tags.includes(1) ? "active" : ""
                 }`}
                 onClick={() => handleTagClick(1)}
@@ -127,7 +127,7 @@ function UpdateTask() {
                 <div>Work</div>
               </div>
               <div
-                className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
+                className={`tag d-flex align-items-center gap-4 p-1 m-1 px-2 ${
                   tags.includes(2) ? "active" : ""
                 }`}
                 onClick={() => handleTagClick(2)}
@@ -136,7 +136,7 @@ function UpdateTask() {
                 <div>Study</div>
               </div>
               <div
-                className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
+                className={`tag d-flex align-items-center gap-4 p-1 m-1 px-2 ${
                   tags.includes(3) ? "active" : ""
                 }`}
                 onClick={() => handleTagClick(3)}
@@ -145,7 +145,7 @@ function UpdateTask() {
                 <div>Entertainment</div>
               </div>
               <div
-                className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
+                className={`tag d-flex align-items-center gap-4 p-1 m-1 px-2 ${
                   tags.includes(4) ? "active" : ""
                 }`}
                 onClick={() => handleTagClick(4)}

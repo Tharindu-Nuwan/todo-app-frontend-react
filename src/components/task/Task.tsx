@@ -122,12 +122,11 @@ function Task({ id, title, description, tags, status }: TaskProps) {
 
   return (
     <>
-      <div className="task d-flex flex-column justify-content-between">
+      <div className="task">
         <div className="d-flex justify-content-between">
           <div>
-            <div className="d-flex justify-content-between title-box">
-              <h5 className={checked ? 'text-decoration-line-through' : ''}>{title}</h5>
-              <input
+            <div className="d-flex justify-content-start gap-3 title-box">
+            <input
                 checked={checked}
                 className="form-check-input chk-box"
                 type="checkbox"
@@ -135,19 +134,20 @@ function Task({ id, title, description, tags, status }: TaskProps) {
                 id={`chk-box-${id}`}
                 onChange={handleCheckboxClick}
               />
+              <div id="title" className={checked ? 'text-decoration-line-through' : ''}>{title}</div>
             </div>
-            <p className={checked ? 'text-decoration-line-through' : ''}>{description}</p>
+            <div id="description" className={checked ? 'text-decoration-line-through' : ''}>{description}</div>
           </div>
         </div>
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex justify-content-between align-items-center icons-dots-container">
           <div className="tag-dots-container">{renderColorDots()}</div>
           <div className="d-flex gap-2">
             <i
-              className="bi bi-pencil-square fs-6 fw-semibold"
+              className="bi bi-pencil-square fw-semibold"
               onClick={() => handleUpdateClick(id, title, description)}
             ></i>
             <i
-              className="bi bi-trash3 fs-6 fw-semibold"
+              className="bi bi-trash3 fw-semibold"
               onClick={() => handleDeleteClick(id)}
             ></i>
           </div>
