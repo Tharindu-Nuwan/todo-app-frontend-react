@@ -51,7 +51,7 @@ function Home() {
           </div>
           <div className="d-flex flex-wrap gap-1 justify-content-around task-container">
             {taskList.length === 0 ? (
-              <h4 className="mt-5 animate__animated animate__bounce animate__delay-2s animate__slower animate__infinite">No Tasks added yet!</h4>
+              <h5 className="mt-5 animate__animated animate__bounce animate__delay-2s animate__slower animate__infinite">No Tasks added yet!</h5>
             ) : (
               taskList.map((task) => (
                 <Task
