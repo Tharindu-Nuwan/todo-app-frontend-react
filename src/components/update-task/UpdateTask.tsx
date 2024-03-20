@@ -69,7 +69,14 @@ function UpdateTask() {
         });
       }
     } catch (error) {
-      alert(error);
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Error!",
+        text: "Check your inputs, Title and Description can't be empty!",
+        showConfirmButton: false,
+        timer: 2000,
+      });
     }
   };
 
@@ -77,7 +84,7 @@ function UpdateTask() {
     <>
       <div className="modal">
         <div className="modal-content">
-          <div className="mb-4 d-flex align-items-center justify-content-start gap-5">
+          <div className="mb-4 d-flex align-items-center justify-content-between">
             <button
               type="button"
               className="btn btn-outline-warning"
@@ -85,7 +92,7 @@ function UpdateTask() {
             >
               Back
             </button>
-            <h4>Update the existing task...</h4>
+            <h4>Update your existing task...</h4>
           </div>
           <div>
             <div className="form-floating mb-3">
@@ -102,7 +109,6 @@ function UpdateTask() {
 
             <div className="form-floating">
               <input
-                id="txt-area"
                 className="form-control"
                 placeholder="Enter the task description here"
                 value={descriptionElm}
@@ -110,7 +116,7 @@ function UpdateTask() {
               ></input>
               <label>Description</label>
             </div>
-            <div className="tags-container d-flex mt-4 justify-content-between">
+            <div className="tags-container-update">
               <div
                 className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
                   tags.includes(1) ? "active" : ""

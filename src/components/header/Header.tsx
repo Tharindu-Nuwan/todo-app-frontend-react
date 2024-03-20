@@ -22,14 +22,12 @@ function Header() {
 
         <div className="button-container d-flex justify-content-between align-items-center gap-3">
           <label onClick={handleAddClick} className="add">
-            <i className="bi bi-file-earmark-plus fs-5"></i> Add
+            {/* <i className="bi bi-file-earmark-plus fs-5"></i> */}+
           </label>
           <label
             onClick={handleLogoutClick}
             className="logout"
-          >
-            <i className="bi bi-box-arrow-right fs-5"></i> Exit
-          </label>
+          ><i className="bi bi-box-arrow-right fs-5"></i></label>
         </div>
       </div>
     </>

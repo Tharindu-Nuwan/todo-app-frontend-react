@@ -126,17 +126,17 @@ function Task({ id, title, description, tags, status }: TaskProps) {
         <div className="d-flex justify-content-between">
           <div>
             <div className="d-flex justify-content-between title-box">
-              <h5>{title}</h5>
+              <h5 className={checked ? 'text-decoration-line-through' : ''}>{title}</h5>
               <input
                 checked={checked}
-                className="form-check-input"
+                className="form-check-input chk-box"
                 type="checkbox"
                 value=""
                 id={`chk-box-${id}`}
                 onChange={handleCheckboxClick}
               />
             </div>
-            <p>{description}</p>
+            <p className={checked ? 'text-decoration-line-through' : ''}>{description}</p>
           </div>
         </div>
         <div className="d-flex justify-content-between align-items-center">

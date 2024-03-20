@@ -12,7 +12,7 @@
   
   .modal-content {
     width: 75%;
-    height: 75%;
+    height: auto;
     background-color: white;
     padding: 20px;
     border-radius: 5px;
@@ -54,4 +54,16 @@
 .active {
   background-color: rgba(188, 190, 13, 0.651);
 }
+
+.tags-container-add {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: space-between;
+}
   
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .modal-content {
+    height: auto;
+  }
+}

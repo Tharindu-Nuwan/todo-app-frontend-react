@@ -61,7 +61,7 @@ function AddTask() {
         position: "center",
         icon: "error",
         title: "Error!",
-        text: "Check your input data, description too long.",
+        text: "Check your inputs, Title and Description can't be empty!",
         showConfirmButton: false,
         timer: 2000,
       });
@@ -72,7 +72,7 @@ function AddTask() {
     <>
       <div className="modal">
         <div className="modal-content">
-          <div className="mb-4 d-flex align-items-center justify-content-start gap-5">
+          <div className="mb-4 d-flex align-items-center justify-content-between">
             <button
               type="button"
               className="btn btn-outline-warning"
@@ -80,8 +80,7 @@ function AddTask() {
             >
               Back
             </button>
-            <h4>Add New Task to your list...</h4>
-            
+            <h4>Add new task to your Task List...</h4> 
           </div>
           <div>
             <div className="form-floating mb-3">
@@ -97,14 +96,13 @@ function AddTask() {
 
             <div className="form-floating">
               <input
-                id="txt-area"
                 className="form-control"
                 placeholder="Enter the task description here"
                 onChange={(e) => setDecsription(e.target.value)}
               ></input>
               <label>Description</label>
             </div>
-            <div className="tags-container d-flex mt-4 justify-content-between">
+            <div className="tags-container-add">
               <div
                 className={`tag d-flex align-items-center gap-4 p-2 px-2 ${
                   tags.includes(1) ? "active" : ""
