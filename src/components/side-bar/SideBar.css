@@ -29,6 +29,8 @@
 }
 
 .image {
+  position: absolute;
+  margin-top: calc(100vh - 350px);
   width: 200px;
   height: 200px;
   background-image: url("/src/assets/images/image.png");
