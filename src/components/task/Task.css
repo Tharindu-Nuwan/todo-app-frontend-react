@@ -10,6 +10,10 @@
   margin: 5px;
 }
 
+.title-box {
+  width: 310px;
+}
+
 .tag-dot {
   width: 15px;
   height: 15px;
@@ -70,5 +74,9 @@ p {
     background-color: rgba(236, 245, 109, 0.815);
     padding: 10px;
     margin: 5px;
+  }
+
+  .title-box {
+    width: 300px;
   }
 }

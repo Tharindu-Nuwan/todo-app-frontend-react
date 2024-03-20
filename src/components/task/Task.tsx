@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Task.css";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useState } from "react";
 
 interface TagType {
   id: number;
@@ -12,13 +13,15 @@ interface TaskProps {
   id: number;
   title: string;
   description: string;
+  status: boolean;
   tags: TagType[];
 }
 
 const tagColors = ["blueviolet", "blue", "orangered", "green"];
 
-function Task({ id, title, description, tags }: TaskProps) {
+function Task({ id, title, description, tags, status }: TaskProps) {
   const navigate = useNavigate();
+  const [checked, setChecked] = useState(status);
 
   const renderColorDots = () => {
     return tags.map((tag) => {
@@ -90,21 +93,54 @@ function Task({ id, title, description, tags }: TaskProps) {
       });
   };
 
+  const handleCheckboxClick = async () => {
+    const newStatus = !checked;
+    const tagId: number[] = tags.map((tag)=>tag.id);
+    
+    try {
+      const response = await axios.patch(
+        `http://localhost:8000/api/update/${id}`,
+        {
+          title: title,
+          description: description,
+          status: newStatus,
+          tags: tagId,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      if (response.status === 200) {
+        setChecked(newStatus);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <div className="task d-flex flex-column justify-content-between">
         <div className="d-flex justify-content-between">
           <div>
-            <h5>{title}</h5>
+            <div className="d-flex justify-content-between title-box">
+              <h5>{title}</h5>
+              <input
+                checked={checked}
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id={`chk-box-${id}`}
+                onChange={handleCheckboxClick}
+              />
+            </div>
             <p>{description}</p>
           </div>
-
-          
         </div>
         <div className="d-flex justify-content-between align-items-center">
-        <div className="tag-dots-container">
-            {renderColorDots()}
-          </div>
+          <div className="tag-dots-container">{renderColorDots()}</div>
           <div className="d-flex gap-2">
             <i
               className="bi bi-pencil-square fs-6 fw-semibold"

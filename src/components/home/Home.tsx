@@ -16,6 +16,7 @@ interface Task {
   id: number;
   title: string;
   description: string;
+  status: boolean;
   tags: TagType[];
 }
 
@@ -59,6 +60,7 @@ function Home() {
                   id={task.id}
                   title={task.title}
                   description={task.description}
+                  status={task.status}
                   tags={task.tags}
                 />
               ))
