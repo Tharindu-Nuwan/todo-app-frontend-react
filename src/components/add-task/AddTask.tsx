@@ -144,7 +144,7 @@ function AddTask() {
           <div className="d-flex justify-content-end">
             <button
               type="button"
-              className="btn btn-warning"
+              className="btn btn-warning btn-save"
               onClick={handleSaveClick}
             >
               Save Task

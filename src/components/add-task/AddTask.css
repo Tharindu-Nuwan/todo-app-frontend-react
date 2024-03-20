@@ -11,7 +11,7 @@
   }
   
   .modal-content {
-    width: 75%;
+    width: 50%;
     height: auto;
     background-color: white;
     padding: 20px;
@@ -60,6 +60,10 @@
   flex-wrap: wrap;
   margin-top: 30px;
   justify-content: space-between;
+}
+
+.btn-save {
+  margin-top: 5px;
 }
   
 @media screen and (min-width: 320px) and (max-width: 720px) {
