@@ -17,8 +17,9 @@ function Login() {
         password: password,
       });
       if (response.status === 200) {
-        const { token } = response.data;
+        const { token, username } = response.data;
         localStorage.setItem("token", token);
+        localStorage.setItem("name", username);
         navigate("../app/home");
         Swal.fire({
           position: "center",

@@ -5,6 +5,7 @@ function SideBar() {
     <>
       <div className="side-bar-container">
         <div className="tags-container">
+        <div className="greeting">Hello {localStorage.getItem('name')}!</div>
           <div className="d-flex align-items-center gap-4 p-2">
             <div id="cir-1" className="circle"></div>
             <div className="txt-tag">Work</div>

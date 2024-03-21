@@ -50,7 +50,7 @@ function Home() {
           <div className="sidebar-container">
             <SideBar />
           </div>
-          <div className="d-flex flex-wrap justify-content-around task-container">
+          <div className="d-flex flex-wrap justify-content-start task-container">
             {taskList.length === 0 ? (
               <h5 className="mt-5 animate__animated animate__bounce animate__delay-2s animate__slower animate__infinite">No Tasks added yet!</h5>
             ) : (

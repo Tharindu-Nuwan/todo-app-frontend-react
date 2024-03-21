@@ -9,6 +9,7 @@ function Header() {
 
   const handleLogoutClick = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("name");
     navigate("../../login");
   };
 
@@ -18,17 +19,15 @@ function Header() {
         <div className="d-flex logo-container justify-content-between align-items-center">
           <div className="logo"></div>
           <div className="logo-text"></div>
-        </div>
-
-        <div className="button-container d-flex justify-content-between align-items-center gap-3">
-          <label onClick={handleAddClick} className="add">
-            {/* <i className="bi bi-file-earmark-plus fs-5"></i> */}+
-          </label>
-          <label
-            onClick={handleLogoutClick}
-            className="logout"
-          ><i className="bi bi-box-arrow-right fs-5"></i></label>
-        </div>
+        </div> 
+          <div className="button-container d-flex justify-content-between align-items-center gap-3">
+            <label onClick={handleAddClick} className="add">
+              +
+            </label>
+            <label onClick={handleLogoutClick} className="logout">
+              <i className="bi bi-box-arrow-right fs-5"></i>
+            </label>
+          </div>
       </div>
     </>
   );

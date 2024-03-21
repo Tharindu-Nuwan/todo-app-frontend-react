@@ -45,7 +45,7 @@ h5 {
   .task-container {
     position: absolute;
     width: 100%;
-    left: 0;
+    left: 5px;
     margin-top: 80px;
     overflow-x: hidden;
     z-index: 1;

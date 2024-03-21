@@ -1,17 +1,22 @@
 .task {
-  width: 330px;
+  width: 350px;
   height: auto;
   min-height: 40px;
   border: none;
-  box-shadow: 2px 2px 7px gray;
-  border-left: 10px solid rgb(240, 190, 53);
-  border-right: 3px solid rgb(240, 190, 53);
+  background-color: rgb(255, 251, 198);
+  box-shadow: 2px 2px 7px rgb(148, 143, 143);
+  border-left: 5px solid rgb(240, 190, 53);
+  border-right: 5px solid rgb(240, 190, 53);
   border-radius: 20px;
   padding: 10px;
   margin: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.task:hover {
+  background-color: rgb(225, 228, 207);
 }
 
 .swal2-cancel {
@@ -109,19 +114,19 @@
   .task {
     width: calc(100vw - 20px);
     min-height: 30px;
-    box-shadow: 1px 1px 5px gray;
     border-radius: 15px;
     padding: 5px;
     margin: 3px;
-    border-left: 10px solid rgb(240, 190, 53);
-    border-right: 5px solid rgb(240, 190, 53);
+    border-left: 5px solid rgb(240, 190, 53);
+    border-right: 3px solid rgb(240, 190, 53);
+    box-shadow: 2px 2px 7px rgb(148, 143, 143), inset 2px 2px 15px rgb(199, 198, 194), inset -3px -3px 10px rgb(180, 180, 168);
     flex-direction: row;
   }
 }
 
 @media screen and (min-width: 421px) and (max-width: 720px) {
   .task {
-    width: calc((100vw - 20px)/2);
+    width: calc(100vw - 20px);
   }
   #title {
     left: 30px;
