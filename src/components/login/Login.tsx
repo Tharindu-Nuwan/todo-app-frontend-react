@@ -24,7 +24,7 @@ function Login() {
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Successfully Logged In",
+          title: `${localStorage.getItem("name")} has been successfully logged in!`,
           showConfirmButton: false,
           timer: 2500,
         });

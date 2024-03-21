@@ -21,7 +21,7 @@ function Signup() {
 
       if (response.status === 200) {
         Swal.fire({
-          position: "top-end",
+          position: "center",
           icon: "success",
           title: "You have been registered successfully",
           showConfirmButton: false,
@@ -30,7 +30,7 @@ function Signup() {
         navigate("/login");
       } else {
         Swal.fire({
-          position: "top-end",
+          position: "center",
           icon: "error",
           title: "Error!",
           text: "Enter valid email or password must contain minimum 4 charactors",
