@@ -85,22 +85,18 @@
 }
 
 #title {
-  position: relative;
-  left: 40px;
   font-size: 1rem;
   font-weight: bold;
   color: rgb(85, 85, 10);  
 }
 
 #description {
-  position: relative;
   font-size: 0.8rem;
   color: rgb(85, 85, 10);
   margin-left: 40px;
 }
 
 .chk-box {
-  position: absolute;
   margin-top: 17px;
   margin-left: 5px;
 }

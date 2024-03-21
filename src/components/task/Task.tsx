@@ -22,6 +22,16 @@ const tagColors = ["blueviolet", "blue", "orangered", "green"];
 function Task({ id, title, description, tags, status }: TaskProps) {
   const navigate = useNavigate();
   const [checked, setChecked] = useState(status);
+  const [isExpandTitle, setIsExpandTitle] = useState(false);
+  const [isExpandDesc, setIsExpandDesc] = useState(false);
+
+  const handleClickTitleExpand = () => {
+    setIsExpandTitle(!isExpandTitle);
+  };
+
+  const handleClickDescExpand = () => {
+    setIsExpandDesc(!isExpandDesc);
+  };
 
   const renderColorDots = () => {
     return tags.map((tag) => {
@@ -95,8 +105,8 @@ function Task({ id, title, description, tags, status }: TaskProps) {
 
   const handleCheckboxClick = async () => {
     const newStatus = !checked;
-    const tagId: number[] = tags.map((tag)=>tag.id);
-    
+    const tagId: number[] = tags.map((tag) => tag.id);
+
     try {
       const response = await axios.patch(
         `http://localhost:8000/api/update/${id}`,
@@ -126,7 +136,7 @@ function Task({ id, title, description, tags, status }: TaskProps) {
         <div className="d-flex justify-content-between">
           <div>
             <div className="d-flex justify-content-start gap-3 title-box">
-            <input
+              <input
                 checked={checked}
                 className="form-check-input chk-box"
                 type="checkbox"
@@ -134,9 +144,57 @@ function Task({ id, title, description, tags, status }: TaskProps) {
                 id={`chk-box-${id}`}
                 onChange={handleCheckboxClick}
               />
-              <div id="title" className={checked ? 'text-decoration-line-through' : ''}>{title}</div>
+              <div
+                id="title"
+                className={checked ? "text-decoration-line-through" : ""}
+              >
+                {title.length <= 23 ? (
+                  <div>{title}</div>
+                ) : (
+                  <div>
+                    {isExpandTitle ? title : title.substring(0, 23)}{" "}
+                    <span onClick={handleClickTitleExpand}>
+                      {!isExpandTitle ? (
+                        <span>
+                          {"... "}
+                          <i className="bi bi-arrow-down-circle-fill"></i>
+                        </span>
+                      ) : (
+                        <span>
+                          {"  "}
+                          <i className="bi bi-arrow-up-circle-fill"></i>
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
-            <div id="description" className={checked ? 'text-decoration-line-through' : ''}>{description}</div>
+            <div
+              id="description"
+              className={checked ? "text-decoration-line-through" : ""}
+            >
+              {description.length <= 28 ? (
+                <div>{description}</div>
+              ) : (
+                <div>
+                  {isExpandDesc ? description : description.substring(0, 28)}{" "}
+                  <span onClick={handleClickDescExpand}>
+                    {!isExpandDesc ? (
+                      <span>
+                        {"... "}
+                        <i className="bi bi-arrow-down-circle-fill"></i>
+                      </span>
+                    ) : (
+                      <span>
+                        {"  "}
+                        <i className="bi bi-arrow-up-circle-fill"></i>
+                      </span>
+                    )}
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <div className="d-flex justify-content-between align-items-center icons-dots-container">
