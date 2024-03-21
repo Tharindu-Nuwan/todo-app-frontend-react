@@ -157,12 +157,12 @@ function Task({ id, title, description, tags, status }: TaskProps) {
                       {!isExpandTitle ? (
                         <span>
                           {"... "}
-                          <i className="bi bi-arrow-down-circle-fill"></i>
+                          <i className="bi bi-chevron-down"></i>
                         </span>
                       ) : (
                         <span>
                           {"  "}
-                          <i className="bi bi-arrow-up-circle-fill"></i>
+                          <i className="bi bi-chevron-up"></i>
                         </span>
                       )}
                     </span>
@@ -183,12 +183,12 @@ function Task({ id, title, description, tags, status }: TaskProps) {
                     {!isExpandDesc ? (
                       <span>
                         {"... "}
-                        <i className="bi bi-arrow-down-circle-fill"></i>
+                        <i className="bi bi-chevron-down"></i>
                       </span>
                     ) : (
                       <span>
                         {"  "}
-                        <i className="bi bi-arrow-up-circle-fill"></i>
+                        <i className="bi bi-chevron-up"></i>
                       </span>
                     )}
                   </span>
