@@ -15,7 +15,7 @@
     height: auto;
     background-color: white;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
@@ -27,6 +27,10 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
+}
+
+h4 {
+  color: rgb(85, 85, 10); 
 }
 
 #cir-1 {
@@ -68,6 +72,7 @@
   
 @media screen and (min-width: 320px) and (max-width: 720px) {
   .modal-content {
+    width: 85%;
     height: auto;
   }
 }

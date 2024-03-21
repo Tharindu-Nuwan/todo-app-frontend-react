@@ -116,7 +116,7 @@ function UpdateTask() {
               ></input>
               <label>Description</label>
             </div>
-            <div className="dots-container-update">
+            <div className="dots-container-update d-flex flex-wrap justify-content-space-between">
               <div
                 className={`tag d-flex align-items-center gap-4 p-1 m-1 px-2 ${
                   tags.includes(1) ? "active" : ""
@@ -124,7 +124,7 @@ function UpdateTask() {
                 onClick={() => handleTagClick(1)}
               >
                 <div id="cir-1" className="circle"></div>
-                <div>Work</div>
+                <div className="txt-tag">Work</div>
               </div>
               <div
                 className={`tag d-flex align-items-center gap-4 p-1 m-1 px-2 ${
@@ -133,7 +133,7 @@ function UpdateTask() {
                 onClick={() => handleTagClick(2)}
               >
                 <div id="cir-2" className="circle"></div>
-                <div>Study</div>
+                <div className="txt-tag">Study</div>
               </div>
               <div
                 className={`tag d-flex align-items-center gap-4 p-1 m-1 px-2 ${
@@ -142,7 +142,7 @@ function UpdateTask() {
                 onClick={() => handleTagClick(3)}
               >
                 <div id="cir-3" className="circle"></div>
-                <div>Entertainment</div>
+                <div className="txt-tag">Entertainment</div>
               </div>
               <div
                 className={`tag d-flex align-items-center gap-4 p-1 m-1 px-2 ${
@@ -151,7 +151,7 @@ function UpdateTask() {
                 onClick={() => handleTagClick(4)}
               >
                 <div id="cir-4" className="circle"></div>
-                <div>Family</div>
+                <div className="txt-tag">Family</div>
               </div>
             </div>
             <div className="d-flex justify-content-end">

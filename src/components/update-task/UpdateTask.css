@@ -18,16 +18,10 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-.dots-container-update {
-  display: flex;
-  flex-direction: row;
-  margin-top: 30px;
-  justify-content: space-between;
-}
   
 @media screen and (min-width: 320px) and (max-width: 720px) {
   .modal-content {
+    width: 85%;
     height: auto;
   }
 }
